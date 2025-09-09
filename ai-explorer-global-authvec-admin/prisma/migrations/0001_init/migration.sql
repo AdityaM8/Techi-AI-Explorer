@@ -1,0 +1,2 @@
+-- Initial tables created by Prisma at deploy time
+-- (Prisma will infer from schema.prisma)

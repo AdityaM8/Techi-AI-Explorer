@@ -1,0 +1,63 @@
+[
+  {
+    "name": "WriterLite",
+    "isFree": true,
+    "siteUrl": "https://play.typedream.ai/",
+    "category": "writing",
+    "supportsEmbed": true,
+    "embedType": "iframe",
+    "authType": "none",
+    "capabilities": [
+      "blog",
+      "outline",
+      "rewrite",
+      "summarize"
+    ],
+    "calledPromptTemplate": "SYSTEM: You are a writing assistant. Task: {{task_description}}. Output: clear, concise, structured."
+  },
+  {
+    "name": "DesignThumb",
+    "isFree": true,
+    "siteUrl": "https://www.photopea.com/",
+    "category": "design",
+    "supportsEmbed": true,
+    "embedType": "iframe",
+    "authType": "none",
+    "capabilities": [
+      "thumbnail",
+      "banner",
+      "logo"
+    ],
+    "calledPromptTemplate": "SYSTEM: You are a design assistant. Task: {{task_description}}. Propose 3 compositions first."
+  },
+  {
+    "name": "CodePad Lite",
+    "isFree": true,
+    "siteUrl": "https://vscode.dev/",
+    "category": "code",
+    "supportsEmbed": true,
+    "embedType": "iframe",
+    "authType": "none",
+    "capabilities": [
+      "refactor",
+      "snippet",
+      "debug"
+    ],
+    "calledPromptTemplate": "SYSTEM: You assist coding. Task: {{task_description}}. Show plan, then code."
+  },
+  {
+    "name": "Research Scout",
+    "isFree": true,
+    "siteUrl": "https://www.perplexity.ai/",
+    "category": "research",
+    "supportsEmbed": false,
+    "embedType": "linkout",
+    "authType": "free-login",
+    "capabilities": [
+      "search",
+      "synthesize",
+      "citations"
+    ],
+    "calledPromptTemplate": "SYSTEM: You are a research aide. Task: {{task_description}}. Return citations."
+  }
+]

@@ -1,0 +1,31 @@
+version: "3.9"
+services:
+  db:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_USER: explorer
+      POSTGRES_PASSWORD: explorer
+      POSTGRES_DB: explorer
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+  web:
+    build: .
+    environment:
+      DATABASE_URL: postgresql://explorer:explorer@db:5432/explorer
+      PORT: 3000
+      AUTH_SECRET: changeme-super-secret
+      NEXTAUTH_URL: http://localhost:3000
+      GOOGLE_CLIENT_ID: ""
+      GOOGLE_CLIENT_SECRET: ""
+      EMAIL_SERVER: ""
+      EMAIL_FROM: "no-reply@localhost"
+      ADMIN_EMAILS: "you@yourcompany.com"
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    command: sh -c "npm run prisma:migrate && npm run vector:setup && npm run seed && npm start"
+volumes:
+  db_data:
